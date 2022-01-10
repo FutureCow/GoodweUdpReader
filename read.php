@@ -11,6 +11,7 @@ require_once "GoodWeProcessor.php";
 require_once "GoodWeOutput.php";
 require_once "GoodWeValidator.php";
 require_once "ToPvOutput.php";
+require_once "ToMQTT.php";
 require_once "inverters.php";
 
 $connector = new GoodWeConnector();
@@ -29,5 +30,7 @@ foreach ($inverters as $inverter) {
     $goodweOutput->show();
     if (array_key_exists('pvoutput', $inverter)) {
         ToPvOutput::send($inverter, $goodweOutput);
+    if (array_key_exists('mqtt', $inverter)) {
+        ToMQTT:send($inverter, $goodweOutput);
     }
 }
