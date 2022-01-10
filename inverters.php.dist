@@ -8,6 +8,10 @@ $inverters = [
             'apiKey' => 'yourApiKey',
             'systemId' => 1, // Your system ID
         ]
+        'mqtt' => [
+            'host' => 'localhost', // host mqtt server
+            'topic' => 'GoodWe', // mqtt topic 
+        ]
     ],
     [
         'name' => 'Inverter West',
